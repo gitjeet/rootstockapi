@@ -1,34 +1,3 @@
-# 🏆 AI-Assisted Web3 Identity Reputation System
-
-## 💡 Overview
-This project demonstrates an innovative use of AI prompts to develop a centralized identity reputation system on the RSK blockchain. The system allows users to:
-- Create/update profiles with usernames
-- Manage reputation scores
-- Control profile visibility
-- All through an Express.js API interface
-
-## 🛠️ AI Prompt Engineering Highlights
-
-### 📝 Generate Solidity Smart Contract
-**Prompt:**  
-"Create a Solidity smart contract for a centralized identity reputation system with:
-1. User profiles containing username, reputation score, and visibility setting
-2. Functions to create/update profiles
-3. Ability to increment reputation
-4. View controls for public/private profiles
-5. Include proper event emissions
-6. Use best practices for security and gas optimization"
-
-**AI Model Used:** GPT-4  
-**Use Case:** Generated the core smart contract logic for the reputation system  
-
-**Best Practices/Insights:**  
-- Specifying data structures (mappings) improved efficiency
-- Explicit event requirements ensured proper blockchain transparency
-- Security checks were automatically included in the generated code
-
-**Example Output:**  
-```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -92,4 +61,3 @@ contract CentralizedIdentityReputation {
         return usernameToProfile[_username].userAddress != address(0);
     }
 }
-```
