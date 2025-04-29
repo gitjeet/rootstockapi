@@ -5,21 +5,46 @@ import dotenv from 'dotenv';
 // Load environment variables
 dotenv.config();
 
-const MPContractAddress = "0x03bb285a4a43d9a964ec68d6b338016e75f52cf0";
+const MPContractAddress = "0x83d987a13d6e4156f43da7f1e073aa5631123837";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Load ABI
 const contractABI =[
 	{
-		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "user",
-				"type": "address"
+				"internalType": "string",
+				"name": "_username",
+				"type": "string"
 			},
+			{
+				"internalType": "bool",
+				"name": "_allowPublicView",
+				"type": "bool"
+			}
+		],
+		"name": "createOrUpdateProfile",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_username",
+				"type": "string"
+			}
+		],
+		"name": "increaseReputation",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
 			{
 				"indexed": false,
 				"internalType": "string",
@@ -48,41 +73,18 @@ const contractABI =[
 				"internalType": "string",
 				"name": "_username",
 				"type": "string"
-			},
-			{
-				"internalType": "bool",
-				"name": "_allowPublicView",
-				"type": "bool"
-			}
-		],
-		"name": "createOrUpdateProfile",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_username",
-				"type": "string"
 			}
 		],
 		"name": "getProfile",
 		"outputs": [
 			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
 				"internalType": "uint256",
-				"name": "",
+				"name": "reputation",
 				"type": "uint256"
 			},
 			{
 				"internalType": "bool",
-				"name": "",
+				"name": "isPublic",
 				"type": "bool"
 			}
 		],
@@ -93,13 +95,24 @@ const contractABI =[
 		"inputs": [
 			{
 				"internalType": "string",
-				"name": "_username",
+				"name": "",
 				"type": "string"
 			}
 		],
-		"name": "increaseReputation",
-		"outputs": [],
-		"stateMutability": "nonpayable",
+		"name": "usernameToProfile",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "reputation",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "allowPublicView",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	}
 ]
