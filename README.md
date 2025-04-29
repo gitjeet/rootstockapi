@@ -6,7 +6,7 @@ This project demonstrates an innovative use of AI prompts to develop a centraliz
 - Manage reputation scores
 - Control profile visibility
 - All through an Express.js API interface
-- Deployed Contract https://explorer.testnet.rootstock.io/address/0x835f882a9de2897b70b6b856049b68d54c53f3a7
+- Deployed Contract https://explorer.testnet.rootstock.io/address/0x83d987a13d6e4156f43da7f1e073aa5631123837
 ## 🛠️ AI Prompt Engineering Highlights
 
 ### 📝 Generate Solidity Smart Contract
